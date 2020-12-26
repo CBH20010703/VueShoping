@@ -35,6 +35,9 @@ export default {
       if (this.value == "") {
         return Toast.fail('不能为空');
       }
+
+      //console.log(arr.join(","))
+      //sessionStorage.setItem("SearchData",)
       Dialog({ message: this.value });
     },
     onSearch: function () {
@@ -42,10 +45,10 @@ export default {
         this.temp = false;
         return
       }
+
       this.temp = true;
       console.log(this.value)
     }
   }
-
 };
 </script>

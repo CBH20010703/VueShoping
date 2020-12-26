@@ -2,12 +2,18 @@
   <div>
     <van-nav-bar :title="title" left-text="" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
       <template #right>
-        <van-icon name="ellipsis" size="20" />
+        <van-icon name="ellipsis" color="#ee0a24" size="20" />
       </template>
     </van-nav-bar>
     <van-share-sheet v-model="showShare" @select="onSelect" title="立即分享给好友" :options="options" />
   </div>
 </template>
+<style >
+.van-nav-bar .van-icon {
+  color: red;
+  font-size: 20px;
+}
+</style>
 <script>
 import { Toast } from 'vant';
 export default {

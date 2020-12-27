@@ -1,20 +1,20 @@
 <template>
-  <div>
-    <van-grid :column-num="5">
-      <van-grid-item icon="paid" text="待付款" />
-      <van-grid-item icon="logistics" text="待发货" />
-      <van-grid-item icon="free-postage" text="已发货" />
-      <van-grid-item icon="smile-comment-o" text="待评价" />
-      <van-grid-item icon="shop-collect-o" text="售后" />
+  <div class="Toolbar">
+    <van-grid :column-num="TollData.columnNum">
+      <van-grid-item v-for="(item,index)  in TollData.data" :key="index" :icon="item.icon" :text="item.val" :badge="item.hotNum" />
     </van-grid>
   </div>
 </template>
-
+<style >
+.Toolbar .van-icon {
+  color: red !important;
+}
+</style>
 <script>
 /*
   后期 需要动态传值 完成两个模块 
 */
 export default {
-
+  props: ["TollData"],
 }
 </script>

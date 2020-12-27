@@ -5,6 +5,11 @@ import store from './store'
 Vue.config.productionTip = false
 import Vant from 'vant';
 import 'vant/lib/index.css';
+import animated from 'animate.css'
+import "./utils/index";
+import "element-ui/lib/theme-chalk/index.css";
+Vue.use(animated)
+// Vant Ui
 Vue.use(Vant);
 new Vue({
   router,

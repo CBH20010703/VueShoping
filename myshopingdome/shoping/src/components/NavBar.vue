@@ -10,7 +10,7 @@
 </template>
 <style >
 .van-nav-bar .van-icon {
-  color: red;
+  color: red !important;
   font-size: 20px;
 }
 </style>

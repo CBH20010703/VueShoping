@@ -1,6 +1,7 @@
 <template>
   <div>
     <nav-bar :Title="header" />
+    <van-notice-bar left-icon="volume-o" text="春节期间可能部分地区停止配送,请见谅" />
     <van-address-list v-model="chosenAddressId" :list="list" :disabled-list="disabledList" disabled-text="以下地址超出配送范围" default-tag-text="默认" @add="onAdd" @edit="onEdit" />
   </div>
 </template>
@@ -45,7 +46,9 @@ export default {
   */
   methods: {
     onAdd() {
-      Toast('新增地址');
+      this.$router.push({
+        path: `/EditSite`,
+      });
     },
     onEdit(item, index) {
       Toast('编辑地址:' + index);

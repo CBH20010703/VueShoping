@@ -4,10 +4,11 @@
     <div class="User-header">
       <div class="User-warp">
         <van-image round width="4rem" height="4rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
-        <p class="LogoinStatus" v-if="isLogoin"><a href="/Logoin">登录/注册</a></p>
+        <p class="LogoinStatus" v-if="isLogoin">
+          <van-cell value="登录/注册" to="/Logoin" />
+        </p>
       </div>
       <div class="Hot-Title">
-
         <h3>免费试用超级会员30天 <img src="../public/img/ar.png"></h3>
         <p><img class="img-right" src="../public/img/sd.png" />可享95折专享价免邮费每日闪购等权益</p>
       </div>
@@ -18,11 +19,15 @@
         <tool-bar :TollData="test" />
       </div>
       <br />
-      <van-cell title="福利中心" is-link to="/" />
-      <tool-bar :TollData="testtow" />
+      <div>
+        <van-cell title="福利中心" is-link to="/" />
+        <tool-bar :TollData="testtow" />
+      </div>
       <br />
-      <van-cell title="我的服务" is-link to="/" />
-      <tool-bar :TollData="testhree" />
+      <div>
+        <van-cell title="我的服务" is-link to="/" />
+        <tool-bar :TollData="testhree" />
+      </div>
     </div>
   </div>
 </template>
@@ -67,6 +72,9 @@ p {
   margin-top: 40px;
   padding: 5px 10px;
 }
+.Home-Pading > div {
+  border-radius: 4px;
+}
 .User-header {
   background: linear-gradient(to right, #3cabec, #634bf6);
   background-color: #d7bc85;
@@ -82,8 +90,9 @@ p {
   color: #ffff;
   padding: 1rem;
 }
-.LogoinStatus a {
+.LogoinStatus div {
   color: #fff;
+  background: inherit;
 }
 .User-warp {
   display: flex;
@@ -118,14 +127,14 @@ export default {
       },
       testhree: {
         columnNum: 4,
-        data: [{ val: "订单详情", icon: "records" },
-        { val: "填写地址", icon: "location-o" },
-        { val: "入驻商家", icon: "shop" },
-        { val: "常见问题", icon: "question-o" },
-        { val: "成为会员", icon: "vip-card-o" },
-        { val: "系统优选", icon: "gift-card" },
-        { val: "分享邀请", icon: "share-o" },
-        { val: "设置", icon: "setting" }]
+        data: [{ val: "查看订单", icon: "records", url: "/Order" },
+        { val: "填写地址", icon: "location-o", url: "/SetSite" },
+        { val: "入驻商家", icon: "shop", url: "#" },
+        { val: "常见问题", icon: "question-o", url: "#" },
+        { val: "成为会员", icon: "vip-card-o", url: "#" },
+        { val: "系统优选", icon: "gift-card", url: "#" },
+        { val: "分享邀请", icon: "share-o", url: "#" },
+        { val: "设置", icon: "setting", url: "#" }]
       },
     }
   }

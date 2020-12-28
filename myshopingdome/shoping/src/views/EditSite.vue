@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav-bar />
+    <nav-bar :Title="header" />
     <van-address-edit :area-list="areaList" show-postal show-delete show-set-default show-search-result :search-result="searchResult" :area-columns-placeholder="['请选择', '请选择', '请选择']" @save="onSave" @delete="onDelete" @change-detail="onChangeDetail" />
   </div>
 </template>
@@ -14,6 +14,7 @@ export default {
   },
   data() {
     return {
+      header: "添加地址",
       areaList,
       searchResult: [],
     };

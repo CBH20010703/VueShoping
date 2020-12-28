@@ -1,7 +1,8 @@
 <template>
   <div class="Toolbar">
     <van-grid :column-num="TollData.columnNum">
-      <van-grid-item v-for="(item,index)  in TollData.data" :key="index" :icon="item.icon" :text="item.val" :badge="item.hotNum" />
+
+      <van-grid-item v-for="(item,index)  in TollData.data" :to="item.url" :key="index" :icon="item.icon" :text="item.val" :badge="item.hotNum" />
     </van-grid>
   </div>
 </template>
